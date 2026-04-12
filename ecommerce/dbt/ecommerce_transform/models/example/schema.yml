@@ -1,0 +1,115 @@
+version: 2
+
+models:
+  - name: stg_customrs
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+  - name: stg_order_items
+    columns:
+      - name: item_id
+        tests:
+          - not_null
+
+  - name: stg_payments
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+  - name: stg_product_categories
+    columns:
+      - name: category_id
+        tests:
+          - not_null
+
+  - name: stg_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+
+  - name: stg_web_events
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+
+
+
+
+  - name: dim_product_categories
+    columns:
+      - name: category_id
+        tests:
+          - unique
+          - not_null
+
+      - name: category_name
+        tests:
+          - not_null
+
+
+  - name: dim_products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+      - name: category
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product_categories')
+              field: category_name
+              config:
+                severity: warn
+
+
+
+  - name: fact_order_items
+    columns:
+      - name: item_id
+        tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fact_orders')
+              field: order_id
+
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+
+      - name: quantity
+        tests:
+          - not_null
+
+      - name: unit_price
+        tests:
+          - not_null
+
+      - name: total_price
+        tests:
+          - not_null
+
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values: ['card', 'cash', 'paypal']

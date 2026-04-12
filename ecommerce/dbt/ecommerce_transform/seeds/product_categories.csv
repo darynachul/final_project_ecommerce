@@ -1,0 +1,21 @@
+category_name,department,margin_level,is_priority
+Electronics,Tech,High,true
+Clothing,Fashion,Medium,false
+Books,Education,Low,false
+Home,Lifestyle,Medium,true
+Sports,Leisure,High,true
+Beauty,Personal Care,High,true
+Toys,Kids,Medium,false
+Garden,Outdoor,Medium,false
+Automotive,Tools,High,false
+Health,Pharmacy,Medium,true
+Grocery,Food,Low,true
+Jewelry,Luxury,Very High,true
+Furniture,Interior,High,false
+Music,Entertainment,Low,false
+Pet Supplies,Animals,Medium,true
+Software,Digital,Very High,true
+Appliances,Home,Medium,false
+Industrial,Business,High,false
+Office,Stationery,Low,false
+Footwear,Fashion,Medium,true

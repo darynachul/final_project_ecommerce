@@ -1,0 +1,7 @@
+ecommerce_transform:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /usr/local/airflow/include/warehouse.duckdb
+      threads: 1

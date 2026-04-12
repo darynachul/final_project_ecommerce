@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "dev"."main"."product_categories" ("category_name" text,"department" text,"margin_level" text,"is_priority" boolean)
+  ;
+    -- dbt seed --
+    
+          COPY "dev"."main"."product_categories" FROM '/Users/darynachul/ecommerce/dbt/ecommerce_transform/seeds/product_categories.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

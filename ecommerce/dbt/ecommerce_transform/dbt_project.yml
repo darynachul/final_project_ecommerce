@@ -1,0 +1,31 @@
+name: 'ecommerce_transform'
+version: '1.0.0'
+config-version: 2
+
+profile: ecommerce_transform
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  ecommerce_transform:  
+    +materialized: table
+    raw:              
+      +schema: stage
+      +tags: ["hourly"]
+      +materialized: table
+    stage:              
+      +schema: stage
+      +tags: ["hourly"]
+      +materialized: view
+    mart:               
+      +schema: mart
+      +tags: ["daily"]
+      +materialized: table
+
+

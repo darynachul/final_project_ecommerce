@@ -1,0 +1,9 @@
+duckdb
+pandas
+pymysql
+sqlalchemy
+faker
+python-dotenv
+dbt-core
+dbt-duckdb
+apache-airflow-providers-mysql

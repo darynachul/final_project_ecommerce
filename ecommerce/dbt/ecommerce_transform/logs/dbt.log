@@ -1,0 +1,456 @@
+[0m19:00:59.036062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a157b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b7af750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b7af890>]}
+
+
+============================== 19:00:59.039911 | 8ca4bd50-aa8a-4bc9-bd44-3b29124df34c ==============================
+[0m19:00:59.039911 [info ] [MainThread]: Running with dbt=1.11.7
+[0m19:00:59.040347 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'empty': 'None', 'invocation_command': 'dbt seed', 'log_format': 'default', 'static_parser': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'introspect': 'True', 'printer_width': '80', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': '/Users/darynachul/.dbt', 'target_path': 'None', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'no_print': 'None', 'debug': 'False', 'version_check': 'True', 'write_json': 'True', 'log_path': '/Users/darynachul/ecommerce/dbt/ecommerce_transform/logs'}
+[0m19:00:59.327312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8ca4bd50-aa8a-4bc9-bd44-3b29124df34c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aa76ea0>]}
+[0m19:00:59.366031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8ca4bd50-aa8a-4bc9-bd44-3b29124df34c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b8d17b0>]}
+[0m19:00:59.367890 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m19:00:59.460799 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m19:00:59.461396 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:00:59.461635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '8ca4bd50-aa8a-4bc9-bd44-3b29124df34c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b89ba50>]}
+[0m19:01:00.425337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8ca4bd50-aa8a-4bc9-bd44-3b29124df34c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bcd9b80>]}
+[0m19:01:00.485216 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/darynachul/ecommerce/dbt/ecommerce_transform/target/manifest.json
+[0m19:01:00.486982 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/darynachul/ecommerce/dbt/ecommerce_transform/target/semantic_manifest.json
+[0m19:01:00.503799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8ca4bd50-aa8a-4bc9-bd44-3b29124df34c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd8e190>]}
+[0m19:01:00.504108 [info ] [MainThread]: Found 24 models, 1 seed, 4 data tests, 474 macros
+[0m19:01:00.504314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8ca4bd50-aa8a-4bc9-bd44-3b29124df34c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd26dd0>]}
+[0m19:01:00.505682 [info ] [MainThread]: 
+[0m19:01:00.505884 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:01:00.506034 [info ] [MainThread]: 
+[0m19:01:00.506317 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:01:00.506866 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dev'
+[0m19:01:00.547633 [debug] [ThreadPool]: Using duckdb connection "list_dev"
+[0m19:01:00.547908 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ecommerce_transform", "target_name": "dev", "connection_name": "list_dev"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dev"'
+    
+  
+  
+[0m19:01:00.548104 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:01:00.562622 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m19:01:00.563652 [debug] [ThreadPool]: On list_dev: Close
+[0m19:01:00.564102 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now create_dev_main)
+[0m19:01:00.564381 [debug] [ThreadPool]: Creating schema "database: "dev"
+schema: "main"
+"
+[0m19:01:00.568838 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m19:01:00.569041 [debug] [ThreadPool]: On create_dev_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ecommerce_transform", "target_name": "dev", "connection_name": "create_dev_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dev'
+        and type='sqlite'
+    
+  
+[0m19:01:00.569203 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:01:00.570000 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:01:00.570813 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m19:01:00.570970 [debug] [ThreadPool]: On create_dev_main: BEGIN
+[0m19:01:00.571226 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:01:00.571365 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m19:01:00.571510 [debug] [ThreadPool]: On create_dev_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ecommerce_transform", "target_name": "dev", "connection_name": "create_dev_main"} */
+
+    
+    
+        create schema if not exists "dev"."main"
+    
+[0m19:01:00.571802 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:01:00.572268 [debug] [ThreadPool]: On create_dev_main: COMMIT
+[0m19:01:00.572430 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m19:01:00.572569 [debug] [ThreadPool]: On create_dev_main: COMMIT
+[0m19:01:00.572781 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:01:00.572930 [debug] [ThreadPool]: On create_dev_main: Close
+[0m19:01:00.577201 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dev_main, now list_dev_main)
+[0m19:01:00.581173 [debug] [ThreadPool]: Using duckdb connection "list_dev_main"
+[0m19:01:00.581342 [debug] [ThreadPool]: On list_dev_main: BEGIN
+[0m19:01:00.581481 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:01:00.581724 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:01:00.581859 [debug] [ThreadPool]: Using duckdb connection "list_dev_main"
+[0m19:01:00.582010 [debug] [ThreadPool]: On list_dev_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ecommerce_transform", "target_name": "dev", "connection_name": "list_dev_main"} */
+select
+      'dev' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dev'
+  
+[0m19:01:00.591716 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m19:01:00.592797 [debug] [ThreadPool]: On list_dev_main: ROLLBACK
+[0m19:01:00.593902 [debug] [ThreadPool]: Failed to rollback 'list_dev_main'
+[0m19:01:00.594094 [debug] [ThreadPool]: On list_dev_main: Close
+[0m19:01:00.594468 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8ca4bd50-aa8a-4bc9-bd44-3b29124df34c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c195790>]}
+[0m19:01:00.594750 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:01:00.594898 [debug] [MainThread]: On master: BEGIN
+[0m19:01:00.595033 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:01:00.595303 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:01:00.595450 [debug] [MainThread]: On master: COMMIT
+[0m19:01:00.595593 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:01:00.595724 [debug] [MainThread]: On master: COMMIT
+[0m19:01:00.595995 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:01:00.596217 [debug] [MainThread]: On master: Close
+[0m19:01:00.597827 [debug] [Thread-1 (]: Began running node seed.ecommerce_transform.product_categories
+[0m19:01:00.598147 [info ] [Thread-1 (]: 1 of 1 START seed file main.product_categories ................................. [RUN]
+[0m19:01:00.598408 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dev_main, now seed.ecommerce_transform.product_categories)
+[0m19:01:00.598613 [debug] [Thread-1 (]: Began compiling node seed.ecommerce_transform.product_categories
+[0m19:01:00.598804 [debug] [Thread-1 (]: Began executing node seed.ecommerce_transform.product_categories
+[0m19:01:00.616713 [debug] [Thread-1 (]: Using duckdb connection "seed.ecommerce_transform.product_categories"
+[0m19:01:00.616958 [debug] [Thread-1 (]: On seed.ecommerce_transform.product_categories: BEGIN
+[0m19:01:00.617141 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:01:00.617462 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:01:00.617641 [debug] [Thread-1 (]: Using duckdb connection "seed.ecommerce_transform.product_categories"
+[0m19:01:00.617825 [debug] [Thread-1 (]: On seed.ecommerce_transform.product_categories: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ecommerce_transform", "target_name": "dev", "node_id": "seed.ecommerce_transform.product_categories"} */
+
+    create table "dev"."main"."product_categories" ("category_name" text,"department" text,"margin_level" text,"is_priority" boolean)
+  
+[0m19:01:00.618796 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:01:00.626622 [debug] [Thread-1 (]: Using duckdb connection "seed.ecommerce_transform.product_categories"
+[0m19:01:00.626866 [debug] [Thread-1 (]: On seed.ecommerce_transform.product_categories: 
+          COPY "dev"."main"."product_categories" FROM '/Users/darynachul/ecommerce/dbt/ecommerce_transform/seeds/product_categories.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m19:01:00.634847 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m19:01:00.638605 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.ecommerce_transform.product_categories"
+[0m19:01:00.647520 [debug] [Thread-1 (]: On seed.ecommerce_transform.product_categories: COMMIT
+[0m19:01:00.647751 [debug] [Thread-1 (]: Using duckdb connection "seed.ecommerce_transform.product_categories"
+[0m19:01:00.647939 [debug] [Thread-1 (]: On seed.ecommerce_transform.product_categories: COMMIT
+[0m19:01:00.649133 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:01:00.650329 [debug] [Thread-1 (]: On seed.ecommerce_transform.product_categories: Close
+[0m19:01:00.651572 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8ca4bd50-aa8a-4bc9-bd44-3b29124df34c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c127070>]}
+[0m19:01:00.651910 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file main.product_categories ............................. [[32mINSERT 20[0m in 0.05s]
+[0m19:01:00.652243 [debug] [Thread-1 (]: Finished running node seed.ecommerce_transform.product_categories
+[0m19:01:00.653068 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:01:00.653310 [debug] [MainThread]: On master: BEGIN
+[0m19:01:00.653485 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:01:00.653806 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:01:00.653961 [debug] [MainThread]: On master: COMMIT
+[0m19:01:00.654110 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:01:00.654254 [debug] [MainThread]: On master: COMMIT
+[0m19:01:00.654484 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:01:00.654640 [debug] [MainThread]: On master: Close
+[0m19:01:00.654847 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:01:00.654991 [debug] [MainThread]: Connection 'seed.ecommerce_transform.product_categories' was properly closed.
+[0m19:01:00.655153 [info ] [MainThread]: 
+[0m19:01:00.655324 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 0.15 seconds (0.15s).
+[0m19:01:00.655730 [debug] [MainThread]: Command end result
+[0m19:01:00.675642 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/darynachul/ecommerce/dbt/ecommerce_transform/target/manifest.json
+[0m19:01:00.676855 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/darynachul/ecommerce/dbt/ecommerce_transform/target/semantic_manifest.json
+[0m19:01:00.680633 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/darynachul/ecommerce/dbt/ecommerce_transform/target/run_results.json
+[0m19:01:00.680806 [info ] [MainThread]: 
+[0m19:01:00.681020 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:01:00.681185 [info ] [MainThread]: 
+[0m19:01:00.681366 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m19:01:00.683934 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 1.6998692, "process_in_blocks": "0", "process_kernel_time": 0.274148, "process_mem_max_rss": "162742272", "process_out_blocks": "0", "process_user_time": 2.285191}
+[0m19:01:00.684217 [debug] [MainThread]: Command `dbt seed` succeeded at 19:01:00.684157 after 1.70 seconds
+[0m19:01:00.684429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd471b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c18d370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c0e1450>]}
+[0m19:01:00.684637 [debug] [MainThread]: Flushing usage events
+[0m19:01:01.339329 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:14:35.918413 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a3bfb60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba1b750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba1b890>]}
+
+
+============================== 22:14:35.922017 | f49ebe9f-71fe-45b4-9293-4f6c0009e244 ==============================
+[0m22:14:35.922017 [info ] [MainThread]: Running with dbt=1.11.7
+[0m22:14:35.922431 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'write_json': 'True', 'use_colors': 'True', 'static_parser': 'True', 'partial_parse': 'True', 'log_path': '/Users/darynachul/ecommerce/dbt/ecommerce_transform/logs', 'no_print': 'None', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'introspect': 'True', 'log_format': 'default', 'printer_width': '80', 'invocation_command': 'dbt seed', 'quiet': 'False', 'debug': 'False', 'warn_error': 'None', 'target_path': 'None', 'empty': 'None', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/darynachul/ecommerce/dbt/ecommerce_transform'}
+[0m22:14:36.177134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f49ebe9f-71fe-45b4-9293-4f6c0009e244', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10acdeea0>]}
+[0m22:14:36.215528 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f49ebe9f-71fe-45b4-9293-4f6c0009e244', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb399d0>]}
+[0m22:14:36.217172 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m22:14:36.280729 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m22:14:36.355484 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m22:14:36.355819 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m22:14:36.356040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f49ebe9f-71fe-45b4-9293-4f6c0009e244', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10be62150>]}
+[0m22:14:37.161410 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_customrs' in the 'models' section of file 'models/example/schema.yml'
+[0m22:14:37.166848 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'fact_order_items' in the 'models' section of file 'models/example/schema.yml'
+[0m22:14:37.229701 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'dim_products' in
+package 'ecommerce_transform' (models/example/schema.yml). Arguments to generic
+tests should be nested under the `arguments` property.
+[0m22:14:37.230044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'f49ebe9f-71fe-45b4-9293-4f6c0009e244', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c310c80>]}
+[0m22:14:37.261116 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.not_null_stg_customrs_customer_id.f562712280' (models/example/schema.yml) depends on a node named 'stg_customrs' in package '' which was not found
+[0m22:14:37.261426 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.unique_fact_order_items_item_id.9f3c504636' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.261625 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.not_null_fact_order_items_item_id.fbfa46453a' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.261806 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.not_null_fact_order_items_order_id.ce02dc1e7e' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.261977 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.relationships_fact_order_items_order_id__order_id__ref_fact_orders_.499cb32e74' (models/example/schema.yml) depends on a node named 'fact_orders' in package '' which was not found
+[0m22:14:37.262149 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.relationships_fact_order_items_order_id__order_id__ref_fact_orders_.499cb32e74' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.262320 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.not_null_fact_order_items_product_id.54f1977fe9' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.262488 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.relationships_fact_order_items_product_id__product_id__ref_dim_products_.4358e7146f' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.262657 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.not_null_fact_order_items_quantity.3fe0aee715' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.262826 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.not_null_fact_order_items_unit_price.a677011a31' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.263005 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.not_null_fact_order_items_total_price.116fc15f0c' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.263173 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.ecommerce_transform.accepted_values_fact_order_items_payment_method__card__cash__paypal.caa139550a' (models/example/schema.yml) depends on a node named 'fact_order_items' in package '' which was not found
+[0m22:14:37.317775 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.ecommerce_transform.marts
+- models.ecommerce_transform.staging
+[0m22:14:37.321334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f49ebe9f-71fe-45b4-9293-4f6c0009e244', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c11b070>]}
+[0m22:14:37.379673 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/darynachul/ecommerce/dbt/ecommerce_transform/target/manifest.json
+[0m22:14:37.381227 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/darynachul/ecommerce/dbt/ecommerce_transform/target/semantic_manifest.json
+[0m22:14:37.399068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f49ebe9f-71fe-45b4-9293-4f6c0009e244', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c09fc70>]}
+[0m22:14:37.399361 [info ] [MainThread]: Found 20 models, 1 seed, 13 data tests, 474 macros
+[0m22:14:37.399550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f49ebe9f-71fe-45b4-9293-4f6c0009e244', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfabdd0>]}
+[0m22:14:37.401043 [info ] [MainThread]: 
+[0m22:14:37.401240 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:14:37.401388 [info ] [MainThread]: 
+[0m22:14:37.401663 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:14:37.402202 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse'
+[0m22:14:37.442642 [debug] [ThreadPool]: Using duckdb connection "list_warehouse"
+[0m22:14:37.442926 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ecommerce_transform", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"warehouse"'
+    
+  
+  
+[0m22:14:37.443102 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:14:37.449900 [debug] [ThreadPool]: DuckDB adapter: duckdb error: IO Error: Cannot open file "/usr/local/airflow/include/warehouse.duckdb": No such file or directory
+[0m22:14:37.450097 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ecommerce_transform", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"warehouse"'
+    
+  
+  
+[0m22:14:37.450257 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m22:14:37.450409 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:14:37.453054 [debug] [ThreadPool]: DuckDB adapter: duckdb error: IO Error: Cannot open file "/usr/local/airflow/include/warehouse.duckdb": No such file or directory
+[0m22:14:37.453222 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: macro list_schemas
+[0m22:14:37.453366 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m22:14:37.453498 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:14:37.456237 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:14:37.456408 [debug] [MainThread]: Connection 'list_warehouse' was properly closed.
+[0m22:14:37.456563 [info ] [MainThread]: 
+[0m22:14:37.456738 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m22:14:37.457009 [error] [MainThread]: Encountered an error:
+IO Error: Cannot open file "/usr/local/airflow/include/warehouse.duckdb": No such file or directory
+[0m22:14:37.468551 [error] [MainThread]: Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/connections.py", line 95, in exception_handler
+    yield
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/sql/connections.py", line 147, in add_query
+    cursor = connection.handle.cursor()
+             ^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+_duckdb.IOException: IO Error: Cannot open file "/usr/local/airflow/include/warehouse.duckdb": No such file or directory
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/connections.py", line 95, in exception_handler
+    yield
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/base/impl.py", line 1320, in execute_macro
+    result = macro_function(**kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt_common/clients/jinja.py", line 427, in __call__
+    return self.call_macro(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 20, in macro
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 50, in macro
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 33, in macro
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/clients/jinja.py", line 82, in __call__
+    return self.call_macro(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt_common/clients/jinja.py", line 395, in call_macro
+    return macro(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 770, in __call__
+    return self._invoke(arguments, autoescape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 784, in _invoke
+    rv = self._func(*arguments)
+  File "<template>", line 52, in macro
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/jinja2/runtime.py", line 303, in call
+    return __obj(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt_common/record.py", line 538, in record_replay_wrapper
+    return func_to_record(*call_args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/base/impl.py", line 471, in execute
+    return self.connections.execute(sql=sql, auto_begin=auto_begin, fetch=fetch, limit=limit)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/connections.py", line 130, in execute
+    return super().execute(sql, auto_begin, fetch, limit)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/sql/connections.py", line 219, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/sql/connections.py", line 131, in add_query
+    with self.exception_handler(sql):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/connections.py", line 102, in exception_handler
+    self.rollback_if_open()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+_duckdb.IOException: IO Error: Cannot open file "/usr/local/airflow/include/warehouse.duckdb": No such file or directory
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/cli/requires.py", line 276, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/cli/requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/cli/requires.py", line 391, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/cli/requires.py", line 368, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/cli/requires.py", line 408, in wrapper
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/cli/main.py", line 720, in seed
+    results = task.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/task/runnable.py", line 626, in run
+    result = self.execute_with_hooks(selected_uids)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/task/runnable.py", line 559, in execute_with_hooks
+    before_run_status = self.before_run(adapter, selected_uids)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/task/run.py", line 1124, in before_run
+    self.create_schemas(adapter, required_schemas)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/task/runnable.py", line 734, in create_schemas
+    existing_schemas_lowered.update(ls_future.result())
+                                    ~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt_common/utils/executor.py", line 16, in connected
+    return func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/task/runnable.py", line 709, in list_schemas
+    for s in adapter.list_schemas(database_quoted)
+             ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/sql/impl.py", line 218, in list_schemas
+    results = self.execute_macro(LIST_SCHEMAS_MACRO_NAME, kwargs={"database": database})
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/base/impl.py", line 1319, in execute_macro
+    with self.connections.exception_handler(f"macro {macro_name}"):
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/connections.py", line 102, in exception_handler
+    self.rollback_if_open()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/base/connections.py", line 125, in rollback_if_open
+    if conn is not None and conn.handle and conn.transaction_open:
+                            ^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/contracts/connection.py", line 96, in handle
+    self._handle.resolve(self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/contracts/connection.py", line 120, in resolve
+    return self.opener(connection)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/connections.py", line 53, in open
+    connection.handle = cls._ENV.handle()
+                        ~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/local.py", line 75, in handle
+    self.conn = self.initialize_db(self.creds, self._plugins)
+                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/dbt/adapters/duckdb/environments/__init__.py", line 159, in initialize_db
+    conn = duckdb.connect(creds.path, read_only=False, config=config)
+_duckdb.IOException: IO Error: Cannot open file "/usr/local/airflow/include/warehouse.duckdb": No such file or directory
+
+[0m22:14:37.469758 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m22:14:37.471736 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 1.602514, "process_in_blocks": "0", "process_kernel_time": 0.238927, "process_mem_max_rss": "154107904", "process_out_blocks": "0", "process_user_time": 2.231731}
+[0m22:14:37.472010 [debug] [MainThread]: Command `dbt seed` failed at 22:14:37.471952 after 1.60 seconds
+[0m22:14:37.472225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c3fa6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c781810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c780e10>]}
+[0m22:14:37.472443 [debug] [MainThread]: Flushing usage events
+[0m22:14:38.135027 [debug] [MainThread]: An error was encountered while trying to flush usage events

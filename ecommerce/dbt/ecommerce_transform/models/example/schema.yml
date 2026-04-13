@@ -113,3 +113,41 @@ models:
         tests:
           - accepted_values:
               values: ['card', 'cash', 'paypal']
+              
+          
+      - name: mart_product_category_ranks
+    description: "Rank products in categories by revenue"
+    columns:
+      - name: product_name
+        tests:
+          - not_null
+          
+      - name: mart_city_country_revenue
+    description: "Number of customers, orders, and total revenue by city and country"
+    columns:
+      - name: city
+        tests:
+          - not_null
+          
+      - name: mart_order_avg_check
+    description: "Analysis of the average check (for each customer and for the store as a whole)"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+          
+      - name: mart_browser_popularity
+    description: "The most popular browser among users"
+    columns:
+      - name: browser
+        tests:
+          - not_null
+          
+      - name: mart_order_status
+    description: "Order analysis: quantity and financial share of each status (completed, canceled)"
+    columns:
+      - name: status
+        tests:
+          - unique
+          - not_null
